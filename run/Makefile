@@ -7,9 +7,9 @@ EMBEDPREFIX=../embeddings/
 INIT:
 	mkdir ../temp
 	cd ../temp;git clone https://github.com/ai-ku/wkmeans.git
-	cd ../temp;make
-	mv ../temp/wkmeans ../src
-	rm -r ../temp
+	cd ../temp/wkmeans;make
+	mv ../temp/wkmeans/wkmeans ../src
+	y | rm -r ../temp
 
 %.eval: $(EMBEDPREFIX)%.embeddings
 	concatEmbeddings.py ../data/wsj.pairs $< $(EMBEDPREFIX)$(CTX).embeddings `zcat ../data/wsj.pos.gz | wc -l` > $*.context.embedded.$(CTX)
