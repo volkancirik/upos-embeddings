@@ -16,7 +16,7 @@ embeddings contact me for wsj.pairs and run
 
     make CTX=embeddingForSubstitute embeddingsForTarget.eval 
 
-To run a series of experiments. Create a file similar to run/embeds and run:
+To run a series of experiments, create a file similar to run/embeds and run:
 
     cat embeds | xargs -P 6 -I '{}' make -n CTX='{}' embeddingsForTarget.eval -n
 
